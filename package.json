@@ -1,8 +1,8 @@
 
 {
-  "name": "lab-01",
+  "name": "bdf_lab_3",
   "version": "1.0.0",
-  "description": "Lab 1: Node.js and Express server",
+  "description": "Lab 3 - REST API using Node.js and Express",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
