@@ -238,13 +238,7 @@ app.post("/books", (req, res) => {
 app.put("/books/:id", (req, res) => {
     const id = Number(req.params.id);
 
-    if (!Number.isInteger(id) || id <= 0) {
-        return res.status(400).json({
-            error: "Invalid book ID"
-        });
-    }
-
-    const book = books.find(book => book.id === id);
+    const book = books.find(b => b.id === id);
 
     if (!book) {
         return res.status(404).json({
@@ -252,18 +246,11 @@ app.put("/books/:id", (req, res) => {
         });
     }
 
-    const error = validateBook(req.body, true);
-
-    if (error) {
-        return res.status(400).json({ error });
-    }
-
     Object.assign(book, req.body);
 
-    if (book.title) book.title = book.title.trim();
-    if (book.author) book.author = book.author.trim();
-
-    res.status(200).json(book);
+    res.status(200).json({
+        message: "Book updated"
+    });
 });
 
 // Route 8: Delete a book
