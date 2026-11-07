@@ -214,15 +214,43 @@ app.get("/books/:id", (req, res) => {
 });
 
 // Route 6: Create a new book
+
 app.post("/books", (req, res) => {
-    const { title, author, price, pages } = req.body;
+    const { title, author, price, pages } = req.body || {};
+
+    // Validate title
+    if (!title || typeof title !== "string" || !title.trim()) {
+        return res.status(400).json({
+            message: "title is required"
+        });
+    }
+
+    // Validate author
+    if (!author || typeof author !== "string" || !author.trim()) {
+        return res.status(400).json({
+            message: "author is required"
+        });
+    }
+
+    // Validate price and pages
+    if (price === undefined || !Number.isFinite(Number(price)) || Number(price) < 0) {
+        return res.status(400).json({
+            message: "Valid price is required"
+        });
+    }
+
+    if (pages === undefined || !Number.isInteger(Number(pages)) || Number(pages) <= 0) {
+        return res.status(400).json({
+            message: "Valid pages are required"
+        });
+    }
 
     const newBook = {
         id: nextId++,
-        title,
-        author,
-        price,
-        pages
+        title: title.trim(),
+        author: author.trim(),
+        price: Number(price),
+        pages: Number(pages)
     };
 
     books.push(newBook);
@@ -232,6 +260,7 @@ app.post("/books", (req, res) => {
         bookId: newBook.id
     });
 });
+
 
 
 // Route 7: Update a book
