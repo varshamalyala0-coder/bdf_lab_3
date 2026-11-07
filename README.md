@@ -163,11 +163,11 @@ The screenshot files are stored in the root directory of this repository. The im
 
 ### Invalid sort order
 
-![Invalid sort order](bad-order%20-400.png)
+![Invalid sort order](bad-order-400.png)
 
 ### Invalid price
 
-![Invalid price](bad-price%20-400.png)
+![Invalid price](bad-price-400.png)
 
 ### Missing title
 
@@ -175,7 +175,7 @@ The screenshot files are stored in the root directory of this repository. The im
 
 ### PUT on a missing book
 
-![PUT on a missing book](put%20-404.png)
+![PUT on a missing book](put-404.png)
 
 ### Time endpoint screenshot
 
