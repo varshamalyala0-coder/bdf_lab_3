@@ -143,19 +143,19 @@ The screenshot files are stored in the root directory of this repository. The im
 
 ### POST returns 201
 
-![POST returns 201 Created](./post%20-201.png)
+![POST returns 201 Created](post-201.png)
 
 ### PUT returns 200
 
-![PUT returns 200 OK](./put%20-200.png)
+![PUT returns 200 OK](put-200.png)
 
 ### DELETE returns 200
 
-![DELETE returns 200 OK](delete%20-200.png)
+![DELETE returns 200 OK](delete-200.png)
 
 ### Missing book returns 404
 
-![GET missing book returns 404](get%20-404.png)
+![GET missing book returns 404](get-404.png)
 
 ### Invalid book ID
 
