@@ -143,11 +143,11 @@ The screenshot files are stored in the root directory of this repository. The im
 
 ### POST returns 201
 
-![POST returns 201 Created](post%20-201.png)
+![POST returns 201 Created](post - 201.png)
 
 ### PUT returns 200
 
-![PUT returns 200 OK](put%20-200.png)
+![PUT returns 200 OK](put - 200.png)
 
 ### DELETE returns 200
 
