@@ -303,8 +303,7 @@ app.delete("/books/:id", (req, res) => {
     const deletedBook = books.splice(index, 1)[0];
 
     res.status(200).json({
-        message: "Book deleted successfully",
-        book: deletedBook
+        message: "Book deleted successfully"
     });
 });
 
