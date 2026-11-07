@@ -215,24 +215,24 @@ app.get("/books/:id", (req, res) => {
 
 // Route 6: Create a new book
 app.post("/books", (req, res) => {
-    const error = validateBook(req.body);
-
-    if (error) {
-        return res.status(400).json({ error });
-    }
+    const { title, author, price, pages } = req.body;
 
     const newBook = {
         id: nextId++,
-        title: req.body.title.trim(),
-        author: req.body.author.trim(),
-        price: req.body.price,
-        pages: req.body.pages
+        title,
+        author,
+        price,
+        pages
     };
 
     books.push(newBook);
 
-    res.status(201).json(newBook);
+    res.status(201).json({
+        message: "Book added",
+        bookId: newBook.id
+    });
 });
+
 
 // Route 7: Update a book
 app.put("/books/:id", (req, res) => {
